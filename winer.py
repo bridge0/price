@@ -46,9 +46,9 @@ class gunlun:
                 self.winer_name_lable = tk.Label(self.window, text='恭喜获奖者:', font=('宋体', 20), width=15, height=1)
                 self.winer_name_lable.place(x=10, y=310)
 
-                self.winer_show = tk.StringVar()
-                self.winer_show.set('      ')
-                self.entry_winer_show = tk.Entry(self.window, font=('宋体', 20), textvariable=self.winer_show, width=30)
+                self.winer_show = tk.StringVar()#获奖名单展示
+                self.winer_show.set('')
+                self.entry_winer_show = tk.Label(self.window, font=('宋体', 20), textvariable=self.winer_show, width=30,wraplength =120,height =15,justify = 'left')
                 # self.entry_winer_show.pack(side='left')
                 self.entry_winer_show.place(x=10, y=360)
 
