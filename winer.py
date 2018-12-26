@@ -3,6 +3,7 @@ import time
 import random
 import threading as td
 
+# -*- coding: UTF-8 -*-
 
 class gunlun:
 
@@ -48,7 +49,7 @@ class gunlun:
 
                 self.winer_show = tk.StringVar()#获奖名单展示
                 self.winer_show.set('')
-                self.entry_winer_show = tk.Label(self.window, font=('宋体', 20), textvariable=self.winer_show, width=30,wraplength =120,height =15,justify = 'left')
+                self.entry_winer_show = tk.Label(self.window, font=('宋体', 20),fg='Crimson',bg='white', textvariable=self.winer_show, width=30,wraplength =120,height =15,justify = 'left')
                 # self.entry_winer_show.pack(side='left')
                 self.entry_winer_show.place(x=10, y=360)
 
@@ -65,7 +66,7 @@ class gunlun:
                 self.button_start_str = tk.StringVar()
                 self.button_start_str.set('Start')
 
-                self.btn_start = tk.Button(self.window, font=('Arial', 36), textvariable=self.button_start_str, command=self.rolling_start)
+                self.btn_start = tk.Button(self.window, font=('Arial', 36),textvariable=self.button_start_str, command=self.rolling_start)
                 self.btn_start.place(x=750, y=490)
 
 
@@ -92,6 +93,7 @@ class gunlun:
                 self.run_f = 1
                 self.thread_1 = td.Thread(target=self.thread_test1)
                 self.thread_1.start()
+               
 
         def thread_test1(self):
 
@@ -100,7 +102,7 @@ class gunlun:
                     print('请输入小于%d的人数'%(len(self.employee_name_list)))
                     self.rolling_name.set('请输入小于%d的人数'%(len(self.employee_name_list)))
                     self.button_start_str.set('Start')
-                    
+                    self.on_hit = False
 
                 else:
 
